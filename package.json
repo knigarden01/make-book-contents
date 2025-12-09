@@ -1,0 +1,23 @@
+{
+  "author": "Constantine-P",
+  "description": "make book contents",
+  "files": [
+    "index.mjs",
+    "package.json",
+    "README.md"
+  ],
+  "license": "MIT",
+  "main": "index.mjs",
+  "module": "index.mjs",
+  "name": "make-book-contents",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Constantine-P/make-book-contents.git"
+  },
+  "type": "module",
+  "version": "0.0.1",
+  "dependencies": {
+    "dree": "^5.1.5",
+    "rus-eng-transliteration": "^0.0.2"
+  }
+}
