@@ -1,10 +1,9 @@
 {
-  "author": "Constantine-P",
+  "author": "knigarden01",
   "description": "make book contents",
   "files": [
     "index.mjs",
-    "package.json",
-    "README.md"
+    "package.json"
   ],
   "license": "MIT",
   "main": "index.mjs",
@@ -12,7 +11,7 @@
   "name": "make-book-contents",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Constantine-P/make-book-contents.git"
+    "url": "git+https://github.com/knigarden01/make-book-contents.git"
   },
   "type": "module",
   "version": "0.0.1",
