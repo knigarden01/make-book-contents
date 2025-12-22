@@ -14,7 +14,7 @@
     "url": "git+https://github.com/knigarden01/make-book-contents.git"
   },
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "dree": "^5.1.5",
     "rus-eng-transliteration": "^0.0.2"

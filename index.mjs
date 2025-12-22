@@ -5,7 +5,7 @@ import fsp from 'node:fs/promises';
 import * as dree from 'dree';
 
 
-const headingRegexp = /## (?<heading>[\s\S]+?)\r\n/g;
+const headingRegexp = /## (?<heading>[\s\S]+?)\n/g;
 const readWriteOptions = { encoding: 'utf-8' };
 
 export async function makeContents(inputDir = 'book', outputDir = 'book') {
@@ -44,7 +44,7 @@ function dirCallback(node, inputDir = 'book') {
     const fileNode = node.items[0];
     const data = fs.readFileSync(`${inputDir}/${fileNode.relativePath}`, readWriteOptions);
     node.items = Array.from(data.matchAll(headingRegexp)).map((x, index) => {
-      const label = x.groups.heading.replaceAll(/[^a-zA-Zа-яА-Я0-9_\-\s]/g, '');
+      const label = x.groups.heading.replaceAll(/[^a-zA-Zа-яА-Я0-9_.\-\s]/g, '').trim();
       return ({
         path: node.relativePath + `#${convert(label, { slugify: true, lowerCase: true })}`,
         label,
@@ -57,9 +57,9 @@ function dirCallback(node, inputDir = 'book') {
   delete node.relativePath;
   node.num = 0;
   if (node.name !== inputDir) {
-    node.label = reverse(node.name.slice(3)).replaceAll('-', ' ');
+    node.label = reverse(node.name.split('-').slice(1).join('-')).replaceAll('-', ' ');
     node.label = node.label[0].toUpperCase() + node.label.slice(1);
-    node.num = Number(node.name.slice(0, 2));
+    node.num = Number(node.name.split('-')[0].replaceAll(/\D/g, ''));
   } else {
     node.path = '';
   }
