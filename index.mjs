@@ -5,7 +5,7 @@ import fsp from 'node:fs/promises';
 import * as dree from 'dree';
 
 
-const headingRegexp = /## (?<heading>[\s\S]+?)\n/g;
+const headingRegexp = /[^#]## (?<heading>[\s\S]+?)\n/g;
 const readWriteOptions = { encoding: 'utf-8' };
 
 export async function makeContents(inputDir = 'book', outputDir = 'book') {
