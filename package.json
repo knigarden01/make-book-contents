@@ -17,6 +17,6 @@
   "version": "0.0.2",
   "dependencies": {
     "dree": "^5.1.5",
-    "rus-eng-transliteration": "^0.0.2"
+    "rus-eng-transliteration": "github:Constantine-P/rus-eng-transliteration"
   }
 }

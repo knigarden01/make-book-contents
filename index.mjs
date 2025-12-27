@@ -57,7 +57,7 @@ function dirCallback(node, inputDir = 'book') {
   delete node.relativePath;
   node.num = 0;
   if (node.name !== inputDir) {
-    node.label = reverse(node.name.split('-').slice(1).join('-')).replaceAll('-', ' ');
+    node.label = reverse(node.name.split('-').slice(1).join('-'));
     node.label = node.label[0].toUpperCase() + node.label.slice(1);
     node.num = Number(node.name.split('-')[0].replaceAll(/\D/g, ''));
   } else {
